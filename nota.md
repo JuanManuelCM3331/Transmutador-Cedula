@@ -1,0 +1,1 @@
+Subo este mini proyecto para el que le sirva, pues no encontraba algun sistema que escaneara cedulas y lo formateara a json, asi que aja.
