@@ -1,0 +1,20 @@
+{
+    "firstName": "JUAN",
+    "middleName": "MANUEL",
+    "lastName": "CARDONA",
+    "secondLastName": "MOLINA",
+    "birthDate": "18-03-2007",
+    "birthDateISO": "2007-03-18",
+    "bloodType": "O+",
+    "gender": "M",
+    "expiryDateISO": "",
+    "source": "pdf417",
+    "documentInfo": {
+        "documentNumber": "1017929467",
+        "afisCode": "41230772",
+        "fingerCard": "25382599"
+    },
+    "image": "7de98dc61087bc31.jpg",
+    "id": "7de98dc61087bc31",
+    "createdAt": "2026-10-22T14:42:22+02:00"
+}
