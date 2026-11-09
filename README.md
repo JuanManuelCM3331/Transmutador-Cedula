@@ -1,4 +1,4 @@
-# 🪪 Cédula Colombiana API & SDK (v2.0 Universal)
+#  Cédula Colombiana API & SDK (v2.0 Universal)
 
 Sistema completo, ligero y adaptable a **cualquier tipo de proyecto** para escanear, decodificar, validar y almacenar datos de documentos de identidad colombianos (**Cédula de Ciudadanía Amarilla**, **Cédula Digital Policarbonato** y **Tarjeta de Identidad**).
 
@@ -6,7 +6,7 @@ Soporta lectura de **código de barras 2D PDF417**, **zona MRZ TD1 (ICAO 9303)**
 
 ---
 
-## ✨ Características Principales
+##  Características Principales
 
 - **Adaptable a cualquier proyecto (4 modos de integración)**:
   1. **SDK JavaScript Universal (`cedula-sdk.js` / `mrz.js`)**: ES Module sin dependencias de framework (compatible con React, Vue, Angular, Astro o HTML/JS puro).
@@ -23,7 +23,7 @@ Soporta lectura de **código de barras 2D PDF417**, **zona MRZ TD1 (ICAO 9303)**
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```text
 Cedula_api/
@@ -40,7 +40,7 @@ Cedula_api/
 
 ---
 
-## 🚀 Ejecución Rápida
+##  Ejecución Rápida
 
 Con el servidor integrado de PHP o desde XAMPP/Apache/Nginx:
 
@@ -53,7 +53,7 @@ php -S localhost:8000
 
 ---
 
-## 🔌 Cómo Adaptarlo a tu Proyecto
+##  Cómo Adaptarlo a tu Proyecto
 
 ### 1. En Frontend (JavaScript / React / Vue / HTML)
 
@@ -118,7 +118,7 @@ if ($datos !== null) {
 
 ---
 
-## ⚙️ Configuración (`config.php` / Variables de Entorno)
+##  Configuración (`config.php` / Variables de Entorno)
 
 | Variable de Entorno | Clave en `config.php` | Por defecto | Descripción |
 | :--- | :--- | :--- | :--- |
@@ -130,7 +130,7 @@ if ($datos !== null) {
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto está distribuido bajo la licencia **GNU General Public License v3.0 (GPL-3.0)** — Consulta el archivo [`LICENSE`](./LICENSE) para el texto legal completo.
 
