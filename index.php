@@ -145,20 +145,22 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
     gap: 14px;
   }
   .brand-icon {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
     background: var(--accent);
     color: var(--accent-ink);
     display: grid;
     place-items: center;
-    font-weight: 800;
-    font-size: 1.15rem;
     box-shadow: var(--shadow-sm);
     flex-shrink: 0;
   }
+  .brand-icon svg {
+    width: 24px;
+    height: 24px;
+  }
   .brand h1 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 750;
     margin: 0;
     letter-spacing: -0.02em;
@@ -166,21 +168,6 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
-  }
-  .badge-version {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-  .brand p {
-    margin: 2px 0 0;
-    color: var(--muted);
-    font-size: 0.9rem;
   }
 
   .header-controls {
@@ -688,23 +675,33 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
   <?php if (!$isEmbed): ?>
   <header class="app-header">
     <div class="brand">
-      <div class="brand-icon">CO</div>
+      <div class="brand-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 8h2m-2 4h2m-8 4h8"/></svg>
+      </div>
       <div>
-        <h1>
-          Cédula Colombiana API &amp; SDK
-          <span class="badge-version">v2.0 Universal</span>
-        </h1>
-        <p>Escáner PDF417 + MRZ TD1 + OCR listo para conectar a cualquier proyecto</p>
+        <h1>Cédula Colombiana API &amp; SDK</h1>
       </div>
     </div>
 
     <div class="header-controls">
       <nav class="nav-tabs" role="tablist" aria-label="Secciones">
-        <button type="button" class="nav-tab active" data-tab="scanner">Escáner</button>
-        <button type="button" class="nav-tab" data-tab="history">Registros (<span id="savedCountBadge">0</span>)</button>
-        <button type="button" class="nav-tab" data-tab="integration">Integrar en tu Proyecto</button>
+        <button type="button" class="nav-tab active" data-tab="scanner">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7V5a2 2 0 012-2h2m10 0h2a2 2 0 012 2v2m0 10v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2m1 0h16M8 8h8v4H8z"/></svg>
+          Escáner
+        </button>
+        <button type="button" class="nav-tab" data-tab="history">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 8h6m-6 4h6m-6 4h4"/></svg>
+          Registros (<span id="savedCountBadge">0</span>)
+        </button>
+        <button type="button" class="nav-tab" data-tab="integration">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          Integrar en tu Proyecto
+        </button>
       </nav>
-      <button type="button" id="btnTheme" class="btn secondary sm" title="Cambiar tema claro/oscuro">Tema</button>
+      <button type="button" id="btnTheme" class="btn secondary sm" title="Cambiar tema claro/oscuro">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        Tema
+      </button>
     </div>
   </header>
   <?php endif; ?>
@@ -720,16 +717,24 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
         </div>
 
         <div class="mode-pills" role="tablist">
-          <button type="button" class="mode-pill active" data-input-mode="file">Subir Foto</button>
-          <button type="button" class="mode-pill" data-input-mode="camera">Cámara en Vivo</button>
-          <button type="button" class="mode-pill" data-input-mode="raw">Lector USB / Texto</button>
+          <button type="button" class="mode-pill active" data-input-mode="file">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-2px;margin-right:4px"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Subir Foto
+          </button>
+          <button type="button" class="mode-pill" data-input-mode="camera">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-2px;margin-right:4px"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>Cámara en Vivo
+          </button>
+          <button type="button" class="mode-pill" data-input-mode="raw">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-2px;margin-right:4px"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-4v4m-4-8h16M4 7h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V9a2 2 0 012-2z"/></svg>Lector USB / Texto
+          </button>
         </div>
 
         <!-- Modo A: Subir Foto / Drag & Drop -->
         <div id="input-mode-file">
           <div class="dropzone" id="dropzone">
             <input type="file" id="fileInput" accept="image/*">
-            <span class="dropzone-icon">🪪</span>
+            <span class="dropzone-icon">
+              <svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+            </span>
             <div class="dropzone-title">Arrastra la foto del reverso aquí o haz clic para elegir</div>
             <p class="dropzone-sub">También puedes pegar una imagen directamente con <strong>Ctrl + V</strong> (JPG, PNG, WebP)</p>
           </div>
@@ -738,9 +743,18 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
         <!-- Modo B: Cámara en Vivo -->
         <div id="input-mode-camera" hidden>
           <div class="actions" style="margin-bottom:10px">
-            <button type="button" id="btnStartCam" class="btn">Iniciar Cámara</button>
-            <button type="button" id="btnCaptureOcr" class="btn secondary" hidden title="Usa esto si estás escaneando una Cédula Digital (zona MRZ)">Capturar para MRZ</button>
-            <button type="button" id="btnStopCam" class="btn danger" hidden>Detener</button>
+            <button type="button" id="btnStartCam" class="btn">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Iniciar Cámara
+            </button>
+            <button type="button" id="btnCaptureOcr" class="btn secondary" hidden title="Usa esto si estás escaneando una Cédula Digital (zona MRZ)">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+              Capturar para MRZ
+            </button>
+            <button type="button" id="btnStopCam" class="btn danger" hidden>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+              Detener
+            </button>
           </div>
           <p style="margin:0;font-size:0.82rem;color:var(--muted)">
             Apunta al código de barras PDF417 del reverso. Si es una <strong>Cédula Digital</strong>, enfoca las 3 líneas inferiores y pulsa <em>"Capturar para MRZ"</em>.
@@ -754,7 +768,10 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
           </p>
           <textarea id="rawInputBox" class="text-input" placeholder="Pega aquí la lectura del PDF417 (PubDSK_1...) o las 3 líneas MRZ (ICCOL...)"></textarea>
           <div class="actions" style="margin-top:10px">
-            <button type="button" id="btnParseRaw" class="btn">Decodificar Texto</button>
+            <button type="button" id="btnParseRaw" class="btn">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+              Decodificar Texto
+            </button>
             <button type="button" id="btnClearRaw" class="btn secondary sm">Limpiar</button>
           </div>
         </div>
@@ -769,9 +786,7 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
         </div>
 
         <!-- Estado -->
-        <div id="statusBox" class="status-box" role="status" aria-live="polite">
-          Listo para escanear. Sube una imagen, activa la cámara o prueba una demostración.
-        </div>
+        <div id="statusBox" class="status-box" role="status" aria-live="polite" hidden></div>
 
         <!-- Barra de pruebas rápidas con 1 clic -->
         <div class="demo-bar">
@@ -794,7 +809,9 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
 
         <!-- Placeholder cuando aún no hay lectura -->
         <div id="emptyState" style="text-align:center;padding:36px 16px;color:var(--muted)">
-          <div style="font-size:2.2rem;margin-bottom:8px">🔍</div>
+          <div class="empty-icon" style="margin-bottom:10px">
+            <svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          </div>
           <p style="margin:0;font-weight:600;color:var(--ink-soft)">Esperando lectura de documento</p>
           <p style="margin:4px 0 0;font-size:0.84rem">
             Los datos estructurados, la tarjeta visual y el JSON aparecerán aquí al instante.
@@ -819,13 +836,31 @@ $callbackUrl = isset($_GET['callback']) ? htmlspecialchars((string)$_GET['callba
           </div>
 
           <div class="actions" style="margin-bottom:14px">
-            <button type="button" id="btnSaveServer" class="btn">Guardar en Servidor</button>
-            <button type="button" id="btnCopyJson" class="btn secondary">Copiar JSON</button>
-            <button type="button" id="btnDownloadJson" class="btn secondary sm">Descargar .JSON</button>
-            <button type="button" id="btnDownloadCsv" class="btn secondary sm">Descargar .CSV</button>
-            <button type="button" id="btnFillDemoForm" class="btn secondary sm">Auto-llenar Formulario</button>
+            <button type="button" id="btnSaveServer" class="btn">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+              Guardar en Servidor
+            </button>
+            <button type="button" id="btnCopyJson" class="btn secondary">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copiar JSON
+            </button>
+            <button type="button" id="btnDownloadJson" class="btn secondary sm">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3"/></svg>
+              Descargar .JSON
+            </button>
+            <button type="button" id="btnDownloadCsv" class="btn secondary sm">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3"/></svg>
+              Descargar .CSV
+            </button>
+            <button type="button" id="btnFillDemoForm" class="btn secondary sm">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              Auto-llenar Formulario
+            </button>
             <?php if ($callbackUrl !== ''): ?>
-            <button type="button" id="btnSendCallback" class="btn">Enviar a Aplicación</button>
+            <button type="button" id="btnSendCallback" class="btn">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              Enviar a Aplicación
+            </button>
             <?php endif; ?>
           </div>
 
@@ -1066,7 +1101,21 @@ document.querySelectorAll('.mode-pill').forEach(btn => {
 
 function setStatus(msg, cls = '') {
   const s = $('statusBox');
-  s.textContent = msg;
+  if (!msg) {
+    s.textContent = '';
+    s.hidden = true;
+    return;
+  }
+  s.hidden = false;
+  let icon = '';
+  if (cls === 'ok') {
+    icon = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+  } else if (cls === 'err') {
+    icon = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>';
+  } else if (cls === 'info') {
+    icon = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4m0-4h.01"/></svg>';
+  }
+  s.innerHTML = (icon ? icon + ' ' : '') + '<span>' + msg + '</span>';
   s.className = 'status-box' + (cls ? ' ' + cls : '');
 }
 
@@ -1082,7 +1131,7 @@ function showScanResult({ data, raw, checks = {}, imageBlob = null, format = 'pd
 
   if (!data || !data.documentInfo?.documentNumber) {
     current = null;
-    $('resultBadges').innerHTML = '<span class="pill-badge warn">Formato no reconocido</span>';
+    $('resultBadges').innerHTML = '<span class="pill-badge warn"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>Formato no reconocido</span>';
     $('jsonOutput').textContent = 'El código se leyó, pero no corresponde a una estructura válida de documento colombiano.';
     setStatus('Código leído, pero formato no reconocido.', 'err');
     return;
@@ -1111,9 +1160,13 @@ function showScanResult({ data, raw, checks = {}, imageBlob = null, format = 'pd
   const sourceBadge = data.source === 'mrz' ? 'MRZ TD1' : 'PDF417';
   const verifiedOk = Boolean(data.birthDateISO && data.birthDateVerified !== false);
 
+  const verifiedBadge = verifiedOk
+    ? `<span class="pill-badge ok"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Verificado</span>`
+    : `<span class="pill-badge warn"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>Revisar Fecha</span>`;
+
   $('resultBadges').innerHTML = `
     <span class="pill-badge">${sourceBadge}</span>
-    <span class="pill-badge ${verifiedOk ? 'ok' : 'warn'}">${verifiedOk ? '✓ Verificado' : '⚠ Revisar Fecha'}</span>
+    ${verifiedBadge}
   `;
 
   $('cardSubBadges').innerHTML = data.bloodType
